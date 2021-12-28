@@ -10,12 +10,23 @@ header {
 }
 	
 .header-logo {
+	font-size: 25px;
 	float: left;
-	padding: 20px;
+	padding: 10px;
 }
 
-.header-list li {
-	list-style: none;
-	float: left;
-	padding: 33px 20px;
-	
+.header-list a:hover {
+  background-color: rgba(199, 0, 0, 0.3);
+}
+
+.header-list a {
+  line-height: 20px;
+  padding: 15px;
+  color: black;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+}
+.header-list {
+  float: right;
+  margin-right: 25px;
