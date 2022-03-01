@@ -1,25 +1,395 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Portofolio Yulia</title>
-    <link rel="stylesheet" href="stylesheet.css">
-  </head>
-  
-  <body>
-	<header>
-	<div class="header-logo">My Portofolio
-	</div>
-	<div class="header-list">
-		<a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#project">Project</a>
-        <a href="#contact">Contact</a
-	</div>
-	</header>
-	<div class="top-wrapper">
-		<div class="container">
-			<h1>PORTOFOLIO</h1>
-			<h1>Production Assistant</h1>
-		</div>
-	</div>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <title>BK Event Organizer</title>
+    <style>
+        .header {
+            background-color: #ffc50c;
+            height: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding-left: 180px;
+            padding-right: 180px;
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+            background-color: #F8DC81;
+        }
+
+        .btn:hover {
+            background-color: #F8DC81;
+        }
+
+        @media (max-width:992px) {
+            .bg-color-white {
+                background: white;
+                padding: 5px;
+            }
+        }
+
+        .navbar-collapse.collapse {
+            z-index: 100;
+        }
+
+        .carousel-wrapper {
+            background-color: #ffc50c;
+            padding-bottom: 50px;
+        }
+
+        .content-title {
+            background-color: #D1D1D1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            background-color: #ffc50c;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 30%);
+            justify-content: center;
+            gap: 3%;
+            padding-top: 50px;
+        }
+
+        .content-grid .card-event:hover {
+            background: linear-gradient(135deg, #D1D1D1, #eea336);
+            border: 0px solid transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .card-event {
+            background-color: transparent;
+            border: 1px transparent solid;
+            color: black;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-event a {
+            color: black;
+            background-color: white;
+            text-decoration: none;
+            padding-left: 25px;
+            padding-right: 25px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+
+        .card-event a:hover {
+            background-color: #D1D1D1;
+            color: black;
+            text-decoration: none;
+            border: 0px solid transparent;
+            padding-left: 25px;
+            padding-right: 25px;
+            border-radius: 5px;
+        }
+
+        .modal-content {
+            border-radius: 5px;
+            background-color: #ebeaea;
+        }
+
+        .feedback-wrapper {
+            background-color: #D1D1D1;
+            padding-left: 180px;
+            padding-bottom: 50px;
+        }
+        .footer-wrapper {
+            background-color: #ffc50c;
+            padding: 30px 25px 25px 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light header navbar fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html" style="color: black;">
+                    <img src="./image/Logo.png" style="width: 50px;">
+                    BK Event Organizer
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html"
+                                style="color: black;">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about.html" style="color: black;">Tentang Kami</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                                Layanan Kami
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Offline Event</a></li>
+                                <li><a class="dropdown-item" href="#">Virtual Event</a></li>
+                                <li><a class="dropdown-item" href="#">Hybrid Event</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline-warning" type="submit" data-bs-toggle="modal"
+                        data-bs-target="#contact"
+                        style="margin-right: 10px; color: black; border-color: black; ">Pertanyaan</i></button>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- Modal pertanyaan -->
+        <div class="modal fade" id="contact" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Leave Your Message</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <label style="width: 500px;">Nama</label><br>
+                            <input type="text">
+                        </div>
+                        <br>
+                        <div>
+                            <label style="width: 500px;">No. HP</label><br>
+                            <input type="text">
+                        </div>
+                        <br>
+                        <div>
+                            <label style="width: 500px;">Email</label><br>
+                            <input type="text">
+                        </div>
+                        <br>
+                        <div>
+                            <label style="width: 500px;">Pesan</label><br>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Kirim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="alert alert-success" style="margin-block-end: auto; text-align: center;">
+        Wellcome to BK Event Organizer
+    </div>
+
+    <!-- carousel -->
+    <div class="carousel-wrapper">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <center><img src="./image/offline.JPG" class="d-block w-75" alt="offline "></center>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>BK Event Organizer</h2>
+                        <p>Tim EO kami akan membantu Anda menemukan konsep terbaik untuk acara corporate seperti Annual
+                            Meeting, Gathering, Awarding Night, Konser Musik dan event lain yang tidak akan terlupakan!
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <center><img src="./image/awarding.jpeg" class="d-block w-75" alt="..."></center>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>BK Event Organizer</h2>
+                        <p>Tim EO kami akan membantu Anda menemukan konsep terbaik untuk acara corporate seperti Annual
+                            Meeting, Gathering, Awarding Night, Konser Musik dan event lain yang tidak akan terlupakan!
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <center><img src="./image/bali.jpeg" class="d-block w-75" alt="..."></center>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>BK Event Organizer</h2>
+                        <p>Tim EO kami akan membantu Anda menemukan konsep terbaik untuk acara corporate seperti Annual
+                            Meeting, Gathering, Awarding Night, Konser Musik dan event lain yang tidak akan terlupakan!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- content card -->
+    <div class="content-title">
+        <h1>Layanan Kami</h1>
+    </div>
+    <div class="content">
+        <div class="content-grid">
+            <div class="card-event card">
+                <img style="border-radius: 5px;" src="./image/offline 2.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="card-title">Offline Event</h3>
+                    <p class="card-text" style="font-size: medium; font-weight: lighter;">Offline Event yang kami adakan
+                        tetap mengikuti protokol kesehatan</p>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#Modal1">Preview</a>
+                </div>
+            </div>
+
+            <div class="card-event card">
+                <img style="border-radius: 5px;" src="./image/virtual.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="card-title">Virtual Event</h3>
+                    <p class="card-text" style="font-size: medium; font-weight: lighter;">Jangkau audiens lebih jauh
+                        dengan menyiarkan acara virtual event Anda secara online bersama kami</p>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#Modal2">Preview</a>
+                </div>
+            </div>
+
+            <div class="card-event card">
+                <img style="border-radius: 5px;" src="./image/hybrid.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="card-title">Hybrid Event</h3>
+                    <p class="card-text" style="font-size: medium; font-weight: lighter;">Siarkan kegiatan acara Hybrid
+                        Event Anda bersama kami</p>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#Modal3">Preview</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- card modal -->
+    <div>
+        <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Offline Event</h5>
+                    </div>
+                    <div class="modal-body">
+                        <img style="width: 50%; border-radius: 5px;" src="./image/offline 2.jpeg" alt="...">
+                        <h5 style="font-weight: bold; padding-top: 20px;">Success Story</h5>
+                        CNBC Indonesia Outlook, CNBC Indonesia Award, BRI Microfinance, Trader Summit, and many more
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" style="border-radius: 5px;"
+                            data-bs-dismiss="modal">Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Virtual Event</h5>
+                    </div>
+                    <div class="modal-body">
+                        <img style="width: 50%; border-radius: 5px;" src="./image/virtual.jpeg" alt="...">
+                        <h5 style="font-weight: bold; padding-top: 20px;">Success Story</h5>
+                        Kelas Cuan, Intimate Gathering AXA Mandiri, Virtual Webinar IICD, Virtual Webinar ICDX, Nex-Be
+                        MDI Ventures, and many more
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" style="border-radius: 5px;"
+                            data-bs-dismiss="modal">Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Hybrid Event</h5>
+                    </div>
+                    <div class="modal-body">
+                        <img style="width: 50%; border-radius: 5px;" src="./image/hybrid.jpeg" alt="...">
+                        <h5 style="font-weight: bold; padding-top: 20px;">Success Story</h5>
+                        Apical2030 Launch, Kelas Vokasi, Webinar Atase Kemendikbud, Indef Sarasehan 100 Ekonom, and many
+                        more
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" style="border-radius: 5px;"
+                            data-bs-dismiss="modal">Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="feedback-wrapper">
+        <div class="feedback-title">
+            <h2>Tinggalkan Pesan Anda</h2>
+        </div>
+        <div class="mb-3" style="width: 35%;">
+            <label for="exampleFormControlInput1" class="form-label">Nama</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Nama Anda">
+        </div>
+        <div class="mb-3" style="width: 35%;">
+            <label for="exampleFormControlInput1" class="form-label">No. HP</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan No. HP Anda">
+        </div>
+        <div class="mb-3" style="width: 35%;">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Email Anda">
+        </div>
+        <div class="mb-3" style="width: 35%;">
+            <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary">Kirim</button>
+    </div>
+    <div class="footer-wrapper">
+        <img src="./image/Logo.png" style="width: 50px;">
+        BK Event Organizer
+        <p>Copyright © 2022. BK Event Organizer. All Rights Reserved</p>
+    </div>
+</body>
+</html>

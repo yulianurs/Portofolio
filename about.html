@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <title>BK Event Organizer</title>
+    <style>
+        .header {
+            background-color: #ffc50c;
+            height: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding-left: 180px;
+            padding-right: 180px;
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+            background-color: #F8DC81;
+        }
+
+        .btn:hover {
+            background-color: #F8DC81;
+        }
+
+        .container-top {
+            max-width: 1170px;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+
+        .top-wrapper {
+            padding: 180px 0 100px 0;
+            background-image: url(./image/imgheader.png);
+            background-size: cover;
+            color: white;
+        }
+
+        .top-wrapper h1 {
+            opacity: 0.7;
+            font-size: 45px;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        .top-wrapper p {
+            opacity: 0.7;
+            margin-bottom: 3px;
+        }
+
+        .carousel-wrapper {
+            background-color: #ffc50c;
+        }
+        .feedback-wrapper {
+            background-color: #D1D1D1;
+            padding-bottom: 50px;
+        }
+        .col-sm-8 {
+            padding-left: 180px;
+        }
+        .col-sm-4 {
+            padding-right: 180px;
+        }
+        .footer-wrapper {
+            background-color: #ffc50c;
+            padding: 30px 25px 25px 180px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light header navbar fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html" style="color: black;">
+                    <img src="./image/Logo.png" style="width: 50px;">
+                    BK Event Organizer
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html"
+                                style="color: black;">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about.html" style="color: black;">Tentang kami</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                                Layanan Kami
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Offline Event</a></li>
+                                <li><a class="dropdown-item" href="#">Virtual Event</a></li>
+                                <li><a class="dropdown-item" href="#">Hybrid Event</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline-warning" type="submit" data-bs-toggle="modal"
+                        data-bs-target="#contact"
+                        style="margin-right: 10px; color: black; border-color: black; ">Pertanyaan</i></button>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- Modal pertanyaan -->
+        <div class="modal fade" id="contact" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Tinggalkan Pesan Anda</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <label style="width: 500px;">Nama</label><br>
+                            <input type="text">
+                        </div>
+                        <br>
+                        <div>
+                            <label style="width: 500px;">Email</label><br>
+                            <input type="text">
+                        </div>
+                        <br>
+                        <div>
+                            <label style="width: 500px;">No. Telfon</label><br>
+                            <input type="text">
+                        </div>
+                        <br>
+                        <div>
+                            <label style="width: 500px;">Pesan</label><br>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Kirim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="top-wrapper">
+        <div class="container-top">
+            <h2>Tentang Kami</h2>
+            <p>Membantu anda membuat acara yang menyenangkan dan tak terlupakan</p>
+        </div>
+
+    </div>
+
+    <!-- Breadcrumb -->
+    <nav style="--bs-breadcrumb-divider: '>'; padding-left: 200px; margin-top: 10px;" aria-label="breadcrumb">
+        <ol class="breadcrumb" style="margin-bottom: 10px;">
+            <li class="breadcrumb-item"><a style="text-decoration: none; color: black;" href="index.html">Beranda</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Tentang Kami</li>
+        </ol>
+    </nav>
+    <br>
+
+    <div class="about">
+        <div class="row">
+            <div class="col-4" style="padding-left: 200px;">
+                <h2>
+                    Kami membantu anda membuat acara yang menyenangkan dan tak terlupakan bersama keluarga, sahabat, dan
+                    kolega.
+                    <br><br>
+                    Let`s Bring the fun out with BK Event Organizer.
+                </h2>
+            </div>
+            <div class="col-8" style="padding-right: 200px;">
+                <div class="clearfix">
+                    <iframe class="col-md-6 float-md-end mb-3 ms-md-3" alt="..."
+                        src="https://drive.google.com/file/d/1XdfvyOgYhRgeiwxI92xnMT1Yh7jtzWix/preview" width="500"
+                        height="250" allowfullscreen> </iframe>
+                    <p>
+                        BK adalah penyedia layanan jasa event organizer (EO) profesional di Jakarta yang berfokus pada
+                        kualitas dan kepuasan klien. Kami berpengalaman dalam merancang dan menyelenggarakan acara untuk
+                        kegiatan corporate seperti Annual Meeting, Gathering, Awarding Night, Konser Musik dengan
+                        dokumentasi yang sangat lengkap. Berbagai kegiatan baik telah kami rancang dengan konsep yang
+                        unik
+                        baik indoor maupun outdoor seperti outbound untuk mempererat tali persaudaraan antar karyawan
+                        atau
+                        menyelenggarakan bazaar untuk mengenalkan produk Anda kepada khalayak luas.
+                        <br><br><br>
+
+                        Mengapa memilih BK sebagai event organizer untuk acara Anda? Karena kami membuka ruang diskusi
+                        bersama klien sehingga segala ide, masukan, bahkan koreksi dalam rangka menyelenggarakan sebuah
+                        acara yang memuaskan klien. Tim event organizer BK memiliki jiwa kreatif, solid, inovatif, dan
+                        telah berpengalaman membantu banyak klien untuk merancang berbagai acara dengan konsep yang
+                        baru,
+                        segar, dan unik sehingga tidak akan dapat dilupakan untuk selamanya. Didukung oleh keahlian dan
+                        pengalaman, jasa event organizer (EO) kami juga memiliki konsep video dan foto aerial yang akan
+                        membuat dokumentasi acara Anda menjadi lebih menarik, bahkan kami dapat menyediakan 180° dan
+                        360°
+                        photobooth yang siap memanjakan tamu undangan. Bersama kami, “One Moment for Everlasting
+                        Memories”
+                        bukan lagi sekedar impian. Let’s Bring the Fun Out with BK!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- carousel -->
+    <div class="carousel-wrapper">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <center><img src="./image/offline.JPG" class="d-block w-50" alt="..."></center>
+                </div>
+                <div class="carousel-item">
+                    <center><img src="./image/awarding.jpeg" class="d-block w-50" alt="..."></center>
+                </div>
+                <div class="carousel-item">
+                    <center><img src="./image/hybrid.jpeg" class="d-block w-50" alt="..."></center>
+                </div>
+                <div class="carousel-item">
+                    <center><img src="./image/bali.jpeg" class="d-block w-50" alt="..."></center>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="feedback-wrapper"><br><br><br>
+        <div class="container-feedback">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>Dapatkan berita dan informasi menarik</h2>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-subs">
+                        <input type="email" class="form-control" style="width: 100%;" placeholder="Masukkan Email Anda">
+                    </div><br>
+                    <div class="subscribe">
+                        <input type="submit" class="btn btn-primary" style="border-radius: 10px; border: 0px solid transparent;" value="Berlangganan">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrapper">
+        <img src="./image/Logo.png" style="width: 50px;">
+        BK Event Organizer
+        <p>Copyright © 2022. BK Event Organizer. All Rights Reserved</p>
+    </div>
+</body>
+
+</html>
